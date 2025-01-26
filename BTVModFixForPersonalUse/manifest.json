@@ -1,5 +1,5 @@
 {
-    "name": "BestestTelevisionModFixForPersonalUse",
+    "name": "BTVModFixForPersonalUse",
     "version_number": "0.0.1",
     "website_url": "https://github.com/Bobby-Ling/BestestTVMod.git",
     "description": "Based on DeathWrench's BestestTVMod(https://github.com/DeathWrench/BestestTVMod), but change `Paths.PluginPath` to `Paths.ConfigPath`. For temporary personal use.",

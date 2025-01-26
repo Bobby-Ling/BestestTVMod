@@ -13,11 +13,11 @@ namespace BestestTVModPlugin
     [BepInPlugin($"{PLUGIN_GUID}", $"{PLUGIN_NAME}", $"{PLUGIN_VERSION}")]
     public class BestestTVModPlugin : BaseUnityPlugin
     {
-        public const string PLUGIN_GUID = "DeathWrench.BestestTelevisionMod";
-        public const string PLUGIN_NAME = "\u200bBestestTelevisionMod";
-        public const string PLUGIN_VERSION = "1.3.1";
+        public const string PLUGIN_GUID = "BobbyLing.BTVModFixForPersonalUse";
+        public const string PLUGIN_NAME = "BTVModFixForPersonalUse";
+        public const string PLUGIN_VERSION = "0.0.1";
         private static readonly Harmony Harmony = new Harmony(PLUGIN_GUID.ToString());
-        public static ManualLogSource Log = new ManualLogSource($"​{PLUGIN_NAME}");
+        public static ManualLogSource Log = new ManualLogSource($"{PLUGIN_NAME}");
         private InputAction reloadVideosAction;
         GameObject gameObject;
 
@@ -33,7 +33,7 @@ namespace BestestTVModPlugin
         {
             if (ctx.ReadValueAsButton())
             {
-                await RefreshVideos(); 
+                await RefreshVideos();
             }
         }
 
@@ -57,7 +57,7 @@ namespace BestestTVModPlugin
             TVScriptPatches.videoSource.url = "file://" + VideoManager.Videos[TVScriptPatches.TVIndex];
             TVScriptPatches.videoSource.Prepare();
             TVScriptPatches.SetTVIndex();
-            await Task.Delay(100); 
+            await Task.Delay(100);
             // Hacky way of refreshing the list
             TVScriptPatches.TVIndexDown();
             await Task.Delay(100);

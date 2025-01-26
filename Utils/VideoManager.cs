@@ -9,9 +9,9 @@ namespace BestestTVModPlugin
     {
         public static void Load()
         {
-            foreach (string text in Directory.GetDirectories(Paths.PluginPath))
+            foreach (string text in Directory.GetDirectories(Paths.ConfigPath))
             {
-                string path = Path.Combine(Paths.PluginPath, text, "Television Videos");
+                string path = Path.Combine(Paths.ConfigPath, text, "Television Videos");
                 if (Directory.Exists(path))
                 {
                     string[] files = Directory.GetFiles(path, "*.mp4");
@@ -21,7 +21,7 @@ namespace BestestTVModPlugin
             }
 
             // Check and create global directory if not exist
-            string globalPath = Path.Combine(Paths.PluginPath, "Television Videos");
+            string globalPath = Path.Combine(Paths.ConfigPath, "Television Videos");
             if (!Directory.Exists(globalPath))
             {
                 Directory.CreateDirectory(globalPath);
